@@ -1,9 +1,15 @@
+
+// used to encrypt password
 const bcrypt = require('bcryptjs');
+// help generate web token for user sign in
+const jwt = require('jsonwebtoken');
+
 // connect to models db
 const User = require('../../models/user');
   
   module.exports = {
     
+    // user sign UP function
     createUser: async args => {
       try {
         const existingUser = await User.findOne({ email: args.userInput.email });
@@ -23,6 +29,23 @@ const User = require('../../models/user');
       } catch (err) {
         throw err;
       }
+    },
+    //user log IN function
+    login: async ({email, password}) => {
+      const user = await User.findOne({email: email});
+      if(!user) {
+        throw new Error('User does not exist');
+      }
+      // compare user password to hashed password in db
+      const isEqual = await bcrypt.compare(password, user.password);
+      if(!isEqual) {
+        throw new Error('Password is incorrect!');
+      }
+      // creates token and validates token
+      const token = jwt.sign({userID: user.id, email: user.email}, 'somesupersecretkey', {
+        expiresIn:'1h'
+      }); 
+      return { userId: user.id, token: token, tokenExpiration: 1 }
     }
   };
 

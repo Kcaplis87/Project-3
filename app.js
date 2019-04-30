@@ -8,47 +8,20 @@ const mongoose = require('mongoose');
 const graphQlSchema = require('./graphql/schema/index');
 // connecting graphQl Resolver (from resolver folder)
 const graphQlResolvers = require('./graphql/resolvers/index');
+//connecting isAuth middleware file 
+const isAuth = require('./middleware/is-auth');
 
-// connecting express
+// connecting express for routes
 const app = express();
 
-
+// connect bodyparser middleware
 app.use(bodyParser.json());
 
-// used to get multipul event IDs
-const events = eventIds => {
-    return Event.find({ _id: { $in: eventIds } })
-        .then(events => {
-            return events.map(event => {
-                return {
-                    ...event._doc,
-                    _id: event.id,
-                    creator: user.bind(this, event.creator)
-                };
-            });
-        })
-        .catch(err => {
-            throw err;
-        })
-}
+// connect isAuth middleware
+app.use(isAuth);
 
 
-// populate and merges user with created event for more flexability
-const user = userId => {
-    return User.findById(userId)
-        .then(user => {
-            return {
-                ...user._doc,
-                _id: user.id,
-                createdEvents: events.bind(this, user._doc.createdEvent)
-            };
-        })
-        .catch(err => {
-            throw err;
-        })
-}
-
-// graphql middleware
+// connects graphql middleware
 app.use('/graphql', graphqlHttp({
     schema: graphQlSchema,
     rootValue: graphQlResolvers,
@@ -62,9 +35,10 @@ mongoose.connect(
     process.env.MONGO_PASSWORD
     }@cluster0-hh00e.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`,
     { useNewUrlParser: true }
-).then().catch(err => {
+) 
+.then(() => {
+    app.listen(3000);
+  })
+  .catch(err => {
     console.log(err);
-});
-
-app.listen(3000);
-
+  });
