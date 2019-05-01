@@ -35,7 +35,7 @@ class AuthPage extends Component {
         let requestBody = {
             query: `
                 query {
-                    logn(email: "${email}", password: "${password}"){
+                    login(email: "${email}", password: "${password}"){
                         userId
                         token
                         tokenExpiration
