@@ -2,6 +2,6 @@
     "env": {
         "MONGO_USER": "enaiman",
         "MONGO_PASSWORD": "test123",
-        "MONGO_DB": "events-dev"
+        "MONGO_DB": "eventsDB"
     }
 }

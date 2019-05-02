@@ -20,12 +20,12 @@ app.use(bodyParser.json());
 // configure headers middle ware
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods','POST,GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-if(req.method === 'OPTIONS') {
-  return res.sendStatus(200);
-}
-next();
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
 });
 
 // connect isAuth middleware
@@ -33,11 +33,13 @@ app.use(isAuth);
 
 
 // connects graphql middleware
-app.use('/graphql', graphqlHttp({
+app.use(
+  '/graphql',
+  graphqlHttp({
     schema: graphQlSchema,
     rootValue: graphQlResolvers,
     graphiql: true
-})
+  })
 );
 
 // connecting db
