@@ -42,14 +42,18 @@ app.use(
   })
 );
 
-// connecting db
-mongoose
-.connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${
-    process.env.MONGO_PASSWORD
-    }@cluster0-hh00e.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`,
-    { useNewUrlParser: true }
-) 
+// connecting to cloud db via mongo Atlas 
+// mongoose
+// .connect(
+//     `mongodb+srv://${process.env.MONGO_USER}:${
+//     process.env.MONGO_PASSWORD
+//     }@cluster0-hh00e.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`,
+//     { useNewUrlParser: true }
+// ) 
+
+//connecting to local db or cloud db via heroku
+const mongoURL = process.env.MONGODB_URI|| "mongodb://localhost:27017/eventsDB"
+mongoose.connect(mongoURL, {useNewUrlParser: true})
 .then(() => {
     app.listen(8000);
   })
