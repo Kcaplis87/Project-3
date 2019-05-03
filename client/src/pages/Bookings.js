@@ -62,14 +62,17 @@ class BookingsPage extends Component {
         this.setState({ isLoading: true });
         const requestBody = {
           query: `
-              mutation {
-               cancelBooking (bookingId: "${bookingId}") {
-                  _id
-                 title
-                }
-              }
-            `
-        };
+          mutation CancelBooking($id: ID!) {
+            cancelBooking(bookingId: $id) {
+            _id
+             title
+            }
+          }
+        `,
+      variables: {
+        id: bookingId
+      }
+    };
     
         fetch('http://localhost:8000/graphql', {
           method: 'POST',
@@ -106,6 +109,7 @@ class BookingsPage extends Component {
         {this.state.isLoading ? (
           <Spinner />
         ) : (
+          
           <BookingList
             bookings={this.state.bookings} onDelete={this.deleteBookingHandler}
           />
