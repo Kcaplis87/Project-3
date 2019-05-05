@@ -8,8 +8,10 @@ import EventsPage from './pages/Events';
 import MainNavigation from './components/nav/mainNavigation';
 import AuthContext from './context/auth-context';
 
+
 // import css
 import './App.css';
+
 
 class App extends Component {
   state = {
@@ -38,6 +40,8 @@ class App extends Component {
             }}
           >
             <MainNavigation />
+
+ 
             <main className="main-content">
               <Switch>
                 {this.state.token && <Redirect from="/" to="/events" exact />}
@@ -54,9 +58,12 @@ class App extends Component {
                 {!this.state.token && <Redirect to="/auth" exact />}
               </Switch>
             </main>
+      
           </AuthContext.Provider>
         </React.Fragment>
       </BrowserRouter>
+      
+   
     );
   }
 }
