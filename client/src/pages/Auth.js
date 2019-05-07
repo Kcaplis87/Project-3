@@ -105,8 +105,59 @@ class AuthPage extends Component {
     return (
       <div>
         <Jumbotron fluid id="jumbo">
-          <Container>
-            <form className="auth-form" onSubmit={this.submitHandler}>
+      <text>
+        <br></br>
+        <br></br>
+        <br></br>
+    
+  
+      </text>
+
+          <div class="flex-container">
+            <div>
+            <CardGroup id="card">
+        <Card>
+    <Card.Img variant="top" id="img1" src="https://images.pexels.com/photos/1083619/pexels-photo-1083619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+    <Card.Body>
+      <Card.Title>Volunteer</Card.Title>
+      <Card.Text>
+        Find time to give back
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted"></small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" id="img2" src="https://images.pexels.com/photos/1020320/pexels-photo-1020320.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+    <Card.Body>
+      <Card.Title>Organize</Card.Title>
+      <Card.Text>
+        Easy Booking and setup right from your cellphone{' '}
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted"></small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" id="img3" src="https://images.pexels.com/photos/921322/pexels-photo-921322.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+    <Card.Body>
+      <Card.Title>Donate</Card.Title>
+      <Card.Text>
+      Give your time, give your heart.... money helps too
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted"></small>
+    </Card.Footer>
+  </Card>
+        </CardGroup>
+           </div>
+      
+    <div>
+        
+        <form className="auth-form" onSubmit={this.submitHandler}>
               <div className="form-control">
                 <label htmlFor="email">E-Mail</label>
                 <input type="email" id="email" ref={this.emailEl} />
@@ -122,50 +173,9 @@ class AuthPage extends Component {
                 </button>
               </div>
             </form>
-          </Container>
+        </div>
+        </div>
         </Jumbotron>
-        <CardGroup>
-        <Card>
-    <Card.Img variant="top" src="https://images.pexels.com/photos/1493374/pexels-photo-1493374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-  <Card>
-    <Card.Img variant="top" src="https://images.pexels.com/photos/1266005/pexels-photo-1266005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This card has even longer content than the first to
-        show that equal height action.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-        </CardGroup>
       </div>
       
 

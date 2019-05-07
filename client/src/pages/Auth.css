@@ -2,18 +2,40 @@
 width: 25rem;
 max-width: 80%;
 margin: 5rem auto;
+float: right;
+
 }
 
 #jumbo{
 
-    background: #000 url("https://images.pexels.com/photos/1409701/pexels-photo-1409701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") center center;
-    width: 100%;
-    height: 600px;
-    background-position: 50% 25%;
-    background-size: 1450px;
+    background: url(https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 900px;
+    
+    
  
 }
+#img1{
+    height:250px;
+}
+#img2{
+    height: 350px;
+}
+#img3{
+    height: 450px;
+}
+.flex-container{
+    display: flex;
+    align-items: stretch;
+} 
 
+#card{
+    
+ opacity: 0.78;
+}
 .main-content {
     margin: 0rem 0rem !important;
 }
