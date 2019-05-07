@@ -109,6 +109,8 @@ class AuthPage extends Component {
         <br></br>
         <br></br>
         <br></br>
+        <br></br>
+        <br></br>
     
   
       </text>
@@ -121,7 +123,7 @@ class AuthPage extends Component {
     <Card.Body>
       <Card.Title>Volunteer</Card.Title>
       <Card.Text>
-        Find time to give back
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -133,7 +135,7 @@ class AuthPage extends Component {
     <Card.Body>
       <Card.Title>Organize</Card.Title>
       <Card.Text>
-        Easy Booking and setup right from your cellphone{' '}
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.{' '}
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -145,7 +147,7 @@ class AuthPage extends Component {
     <Card.Body>
       <Card.Title>Donate</Card.Title>
       <Card.Text>
-      Give your time, give your heart.... money helps too
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
       </Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -154,12 +156,13 @@ class AuthPage extends Component {
   </Card>
         </CardGroup>
            </div>
-      
+    
     <div>
-        
+    
         <form className="auth-form" onSubmit={this.submitHandler}>
               <div className="form-control">
                 <label htmlFor="email">E-Mail</label>
+             
                 <input type="email" id="email" ref={this.emailEl} />
               </div>
               <div className="form-control">
@@ -173,6 +176,7 @@ class AuthPage extends Component {
                 </button>
               </div>
             </form>
+            
         </div>
         </div>
         </Jumbotron>

@@ -1,10 +1,12 @@
 .auth-form {
 width: 25rem;
-max-width: 80%;
-margin: 5rem auto;
-float: right;
+height: 300px;
+margin: 80px;
+
 
 }
+
+
 
 #jumbo{
 
@@ -19,17 +21,18 @@ float: right;
  
 }
 #img1{
-    height:250px;
+    height:300px;
 }
 #img2{
-    height: 350px;
+    height: 300px;
 }
 #img3{
-    height: 450px;
+    height: 300px;
 }
 .flex-container{
     display: flex;
-    align-items: stretch;
+
+    justify-content: space-between;
 } 
 
 #card{
