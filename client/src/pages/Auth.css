@@ -1,6 +1,45 @@
 .auth-form {
 width: 25rem;
-max-width: 80%;
-margin: 5rem auto;
+height: 300px;
+margin: 80px;
+
+
+}
+
+
+
+#jumbo{
+
+    background: url(https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 900px;
+    
+    
+ 
+}
+#img1{
+    height:300px;
+}
+#img2{
+    height: 300px;
+}
+#img3{
+    height: 300px;
+}
+.flex-container{
+    display: flex;
+
+    justify-content: space-between;
+} 
+
+#card{
+    
+ opacity: 0.78;
+}
+.main-content {
+    margin: 0rem 0rem !important;
 }
 

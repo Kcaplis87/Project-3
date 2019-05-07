@@ -2,39 +2,43 @@ import React, { Component } from 'react';
 
 import './Auth.css';
 import AuthContext from '../context/auth-context';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Card from 'react-bootstrap/Card';
 
 class AuthPage extends Component {
   state = {
     isLogin: true
   };
 
-    // connecting to get auth-context data
-    static contextType = AuthContext;
+  // connecting to get auth-context data
+  static contextType = AuthContext;
 
 
-    constructor(props) {
-        super(props);
-        this.emailEl = React.createRef();
-        this.passwordEl = React.createRef();
-      }
-    
-      switchModeHandler = () => {
-        this.setState(prevState => {
-          return { isLogin: !prevState.isLogin };
-        });
-      };
-    
-      submitHandler = event => {
-        event.preventDefault();
-        const email = this.emailEl.current.value;
-        const password = this.passwordEl.current.value;
-    
-        if (email.trim().length === 0 || password.trim().length === 0) {
-          return;
-        }
-    
-        let requestBody = {
-          query: `
+  constructor(props) {
+    super(props);
+    this.emailEl = React.createRef();
+    this.passwordEl = React.createRef();
+  }
+
+  switchModeHandler = () => {
+    this.setState(prevState => {
+      return { isLogin: !prevState.isLogin };
+    });
+  };
+
+  submitHandler = event => {
+    event.preventDefault();
+    const email = this.emailEl.current.value;
+    const password = this.passwordEl.current.value;
+
+    if (email.trim().length === 0 || password.trim().length === 0) {
+      return;
+    }
+
+    let requestBody = {
+      query: `
           query Login($email: String!, $password: String!) {
             login(email: $email, password: $password) {
               userId
@@ -43,15 +47,15 @@ class AuthPage extends Component {
             }
           }
         `,
-        variables: {
-          email: email,
-          password: password
-        }
-      };
-    
-      if (!this.state.isLogin) {
-        requestBody = {
-          query: `
+      variables: {
+        email: email,
+        password: password
+      }
+    };
+
+    if (!this.state.isLogin) {
+      requestBody = {
+        query: `
             mutation CreateUser($email: String!, $password: String!) {
               createUser(userInput: {email: $email, password: $password}) {
                 _id
@@ -59,16 +63,16 @@ class AuthPage extends Component {
               }
             }
           `,
-          variables: {
-            email: email,
-            password: password
-          }
-        };
-      }
-        
+        variables: {
+          email: email,
+          password: password
+        }
+      };
+    }
 
-        // send request data to graphql
-        fetch('http://localhost:8000/graphql', {
+
+    // send request data to graphql
+    fetch('http://localhost:8000/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -96,25 +100,96 @@ class AuthPage extends Component {
   };
 
   render() {
+
+
     return (
-      <form className="auth-form" onSubmit={this.submitHandler}>
-        <div className="form-control">
-          <label htmlFor="email">E-Mail</label>
-          <input type="email" id="email" ref={this.emailEl} />
+      <div>
+        <Jumbotron fluid id="jumbo">
+      <text>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+    
+  
+      </text>
+
+          <div class="flex-container">
+            <div>
+            <CardGroup id="card">
+        <Card>
+    <Card.Img variant="top" id="img1" src="https://images.pexels.com/photos/1083619/pexels-photo-1083619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+    <Card.Body>
+      <Card.Title>Volunteer</Card.Title>
+      <Card.Text>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted"></small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" id="img2" src="https://images.pexels.com/photos/1020320/pexels-photo-1020320.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+    <Card.Body>
+      <Card.Title>Organize</Card.Title>
+      <Card.Text>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.{' '}
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted"></small>
+    </Card.Footer>
+  </Card>
+  <Card>
+    <Card.Img variant="top" id="img3" src="https://images.pexels.com/photos/921322/pexels-photo-921322.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+    <Card.Body>
+      <Card.Title>Donate</Card.Title>
+      <Card.Text>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
+      </Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted"></small>
+    </Card.Footer>
+  </Card>
+        </CardGroup>
+           </div>
+    
+    <div>
+    
+        <form className="auth-form" onSubmit={this.submitHandler}>
+              <div className="form-control">
+                <label htmlFor="email">E-Mail</label>
+             
+                <input type="email" id="email" ref={this.emailEl} />
+              </div>
+              <div className="form-control">
+                <label htmlFor="password">Password!</label>
+                <input type="password" id="password" ref={this.passwordEl} />
+              </div>
+              <div className="form-actions">
+                <button type="submit">Submit</button>
+                <button type="button" onClick={this.switchModeHandler}>
+                  Switch to {this.state.isLogin ? 'Signup' : 'Login'}
+                </button>
+              </div>
+            </form>
+            
         </div>
-        <div className="form-control">
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" ref={this.passwordEl} />
         </div>
-        <div className="form-actions">
-          <button type="submit">Submit</button>
-          <button type="button" onClick={this.switchModeHandler}>
-            Switch to {this.state.isLogin ? 'Signup' : 'Login'}
-          </button>
-        </div>
-      </form>
+        </Jumbotron>
+      </div>
+      
+
+ 
+
     );
+
   }
+
 }
+
 
 export default AuthPage;
