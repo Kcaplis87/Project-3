@@ -166,7 +166,7 @@ class AuthPage extends Component {
                 <input type="email" id="email" ref={this.emailEl} />
               </div>
               <div className="form-control">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password!</label>
                 <input type="password" id="password" ref={this.passwordEl} />
               </div>
               <div className="form-actions">
