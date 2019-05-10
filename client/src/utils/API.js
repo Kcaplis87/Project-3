@@ -1,28 +1,20 @@
-import axios from "axios";
-
-const baseURL = "http://data.orghunter.com/v1/charitysearch?";
-const user_key = "user_key=6df46cdb01f8d1e0479ada556c86e59c";
-
-// Example PostMan Request
-// http://data.orghunter.com/v1/charitysearch?user_key=6df46cdb01f8d1e0479ada556c86e59c&searchTerm=cancer
+import axios from 'axios';
 
 export default {
-    searchCharity: function(charity) {
-        const searchTerm = charity.split(" ").join("+");
-        return axios.get(baseURL + user_key + "&searchTerm=" + searchTerm);
-        //return axios.post(baseURL + user_key + "&searchTerm=" + searchTerm);
-    },
-    saveCharity: function() {
-        const charityData = {
-            url: url,
-            donationUrl: donationUrl,
-            state: state,
-            score: score,
-            category: category,
-            website: website,
-            missionStatement: missionStatement
-        }
-        return axios.post("/api/", charityData);
-    }
-
+  // Gets books from the Google API
+  getCharities: function(q) {
+    return axios.get("/api/orghunter", { params: { q: "charityName:" + q } });
+  },
+  // Gets all saved books
+  getSavedCharities: function() {
+    return axios.get("/api/charities");
+  },
+  // Deletes the saved book with the given id
+  deleteCharity: function(id) {
+    return axios.delete("/api/charities/" + id);
+  },
+  // Saves an book to the database
+  saveCharity: function(charityData) {
+    return axios.post("/api/charities", charityData);
+  }
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './CharityList.css';
 
 const CharityList = props => (

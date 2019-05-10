@@ -115,7 +115,7 @@ class AuthPage extends Component {
   
       </text>
 
-          <div class="flex-container">
+          <div className="flex-container">
             <div>
             <CardGroup id="card">
         <Card>
