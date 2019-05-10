@@ -166,7 +166,7 @@ class AuthPage extends Component {
 
         <CardGroup id="card1">
           <Card>
-            <Card.Img variant="top" id="img1" src="https://images.pexels.com/photos/1493374/pexels-photo-1493374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+            <Card.Img variant="top" id="img1" src="hands1.jpeg" />
             <Card.Body>
               <Card.Title>Volunteer</Card.Title>
               <Card.Text>
@@ -177,7 +177,7 @@ class AuthPage extends Component {
 
           </Card>
           <Card>
-            <Card.Img variant="top" id="img2" src="https://cdn.pixabay.com/photo/2016/03/05/21/21/agree-1238964_1280.jpg" />
+            <Card.Img variant="top" id="img2" src="hands2.jpeg" />
             <Card.Body>
               <Card.Title>Organize</Card.Title>
               <Card.Text>
@@ -188,7 +188,7 @@ class AuthPage extends Component {
 
           </Card>
           <Card>
-            <Card.Img variant="top" id="img3" src="https://cdn.pixabay.com/photo/2014/09/26/21/51/heart-462873_1280.jpg" />
+            <Card.Img variant="top" id="img3" src="hands3.jpg" />
             <Card.Body>
               <Card.Title>Donate</Card.Title>
               <Card.Text>
@@ -208,7 +208,7 @@ class AuthPage extends Component {
             <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
-                src="https://images.pexels.com/photos/678637/pexels-photo-678637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                src="carousel1.jpeg"
                 alt="First slide"
                 id="img-1"
               />
@@ -220,7 +220,7 @@ class AuthPage extends Component {
             <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
-                src="https://cdn.pixabay.com/photo/2017/07/29/00/09/child-2550326_1280.jpg"
+                src="carousel2.jpeg"
                 alt="Third slide"
                 id="img-2"
               />
@@ -233,7 +233,7 @@ class AuthPage extends Component {
             <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
-                src="https://cdn.pixabay.com/photo/2017/02/03/17/41/poverty-2035694_1280.jpg"
+                src="carousel3.jpeg"
                 alt="Third slide"
                 id="img-3"
               />
