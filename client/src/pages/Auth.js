@@ -167,7 +167,7 @@ class AuthPage extends Component {
             <Card.Body>
               <Card.Title>Volunteer</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
+                Your time can impact lives
       </Card.Text>
             </Card.Body>
 
@@ -177,7 +177,7 @@ class AuthPage extends Component {
             <Card.Body>
               <Card.Title>Organize</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.{' '}
+                Put your best foot forward and step into a leadership role{' '}
               </Card.Text>
             </Card.Body>
 
@@ -187,7 +187,7 @@ class AuthPage extends Component {
             <Card.Body>
               <Card.Title>Donate</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
+                Whether it is time, money or positivity we appreciate your awareness
       </Card.Text>
             </Card.Body>
 
