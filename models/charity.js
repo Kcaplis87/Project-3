@@ -5,27 +5,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const charitySchema = new Schema({
-    url: {
-        type: String
-    },
-    donationUrl: {
-        type: String
-    },
-    state: {
-        type: String
-    },
-    score: {
-        type: Number
-    },
-    category: {
-        type: String
-    },
-    website: {
-        type: String
-    },
-    missionStatement: {
-        type: String
-    }
+    url: { type: String, required: true },
+    donationUrl: { type: String, required: true },
+    state: { type: String },
+    score: { type: Number, required: true },
+    category: { type: String },
+    website: { type: String },
+    missionStatement: { type: String }
 });
 
-module.exports = mongoose.model('Charity', charitySchema);
+const Charity = mongoose.model('Charity', charitySchema);
+
+module.exports = Charity;
