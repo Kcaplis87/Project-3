@@ -157,6 +157,9 @@ class AuthPage extends Component {
 
             </Form>
           </div>
+          <div>
+            <h8>"Giving is not about <br></br>making a donation, <br></br>it is about making <br></br>a difference."</h8>
+          </div>
           </div>
         </Jumbotron>
 

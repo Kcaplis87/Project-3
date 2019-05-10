@@ -40,14 +40,14 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 color: #47476b;
 font-weight: bolder;
 position: relative;
-left: 50px;
-top: 50px;
+left: 75px;
+top: 20px;
 
 }
 
 #img{
     position: relative;
-    bottom: 175px;
+    bottom: 195px;
     right: 50px;
    
 }
@@ -99,6 +99,7 @@ h6{
 font-size: 12px;
 color: steelblue;
 margin-left: 40px;
+
 }
 #info2{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -106,6 +107,16 @@ margin-left: 40px;
   font-size: 15px;
   text-align: left;
  
+}
+
+h8{
+    color: beige;
+   position: relative;
+   left: 175px;
+   font-size: 60px;
+   font-family: Florence, cursive;
+   font-style: oblique;
+   top: 100px;
 }
 
 #info1{
