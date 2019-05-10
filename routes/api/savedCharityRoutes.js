@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const charityResolver = require("../../graphql/resolvers/charityResolver.js");
+const savedCharityResolver = require("../../graphql/resolvers/savedCharityResolver.js");
 
 // Matches with "/api/charities"
 router.route("/")
-  .get(charityResolver.find)
-  .post(charityResolver.create);
+  .get(savedCharityResolver.find)
+  .post(savedCharityResolver.create);
 
 // Matches with "/api/charities/:id"
 router
   .route("/:id")
-  .get(charityResolver.findById)
-  .put(charityResolver.update)
-  .delete(charityResolver.remove);
+  .get(savedCharityResolver.findById)
+  .put(savedCharityResolver.update)
+  .delete(savedCharityResolver.remove);
 
 module.exports = router;

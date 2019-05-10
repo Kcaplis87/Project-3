@@ -88,6 +88,7 @@ class CharityPage extends Component {
                 <Form>
                 <Form.Control type="text" placeholder="Charity Name" handleInputChange={this.handleInputChange}/>
                 <Button
+                getCharities={this.getCharities}
                 handleFormSubmit={this.handleFormSubmit}
                 q={this.state.q} />
               </Form>
@@ -106,7 +107,7 @@ class CharityPage extends Component {
                           Button={() => (
                             <button
                               onClick={() => this.handleCharitySave(charity._id)}
-                              className="btn btn-primary ml-2">Save
+                              className="btn btn-primary ml-2">Save Charity
                             </button>
                           )}
                         />

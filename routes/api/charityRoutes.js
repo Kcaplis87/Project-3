@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const charityResolver = require("../../graphql/resolvers/charityResolver");
+const charityController = require("../controllers/charityController");
 
 // Matches with "/api/orghunter"
 router
   .route("/")
-  .get(charityResolver.find);
+  .get(charityController.find);
 
 module.exports = router;

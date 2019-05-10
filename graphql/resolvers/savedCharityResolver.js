@@ -1,4 +1,4 @@
-const db = require("../../models");
+const db = require("../../models/charity");
 
 // Defining methods for the charityResolver
 module.exports = {
