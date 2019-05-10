@@ -167,8 +167,9 @@ class AuthPage extends Component {
             <Card.Body>
               <Card.Title>Volunteer</Card.Title>
               <Card.Text>
-                Your time can impact lives
+                Spend your time making an impact on the lives of those around you
       </Card.Text>
+      <Button variant="primary" id="button">Save Your Spot</Button>
             </Card.Body>
 
           </Card>
@@ -179,6 +180,7 @@ class AuthPage extends Component {
               <Card.Text>
                 Put your best foot forward and step into a leadership role{' '}
               </Card.Text>
+              <Button variant="primary" id="button">Learn More</Button>
             </Card.Body>
 
           </Card>
@@ -189,6 +191,7 @@ class AuthPage extends Component {
               <Card.Text>
                 Whether it is time, money or positivity we appreciate your awareness
       </Card.Text>
+      <Button variant="primary" id="button">Start Here</Button>
             </Card.Body>
 
           </Card>
