@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import Spinner from "../components/Spinner/Spinner";
 import AuthContext from '../context/auth-context';
-import CharityList from '../components/Charities/CharityList';
-import { List } from '../components/List';
 import API from '../utils/API';
+import Spinner from "../components/Spinner/Spinner";
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { List } from '../components/List';
+import CharityList from '../components/Charities/CharityList';
 
 class CharityPage extends Component {
     state = {
@@ -17,6 +21,33 @@ class CharityPage extends Component {
         this.getSavedCharities();
       }
 
+      handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+      };
+
+      handleFormSubmit = event => {
+        event.preventDefault();
+        this.getCharities();
+      };
+
+      getCharities = () => {
+        API.getCharities(this.state.q)
+          .then(res =>
+            this.setState({
+              charities: res.data
+            })
+          )
+          .catch(() =>
+            this.setState({
+              charities: [],
+              message: "No Charity Found, Try a Different Keyword"
+            })
+          );
+      };
+
       getSavedCharities = () => {
         API.getSavedCharities()
           .then(res =>
@@ -27,8 +58,18 @@ class CharityPage extends Component {
           .catch(err => console.log(err));
       };
 
-      handleCharityDelete = id => {
-        API.deleteCharity(id).then(res => this.getSavedCharities());
+      handleCharitySave = id => {
+        const charity = this.state.charities.find(charity => charity.id === id);
+    
+        API.saveChartiy({
+          url: charity.url,
+          donationUrl: charity.data.donationUrl,
+          state: charity.data.state,
+          score: charity.data.score,
+          category: charity.data.category,
+          website: charity.data.website,
+          missionStatement: charity.data.missionStatement
+        }).then(() => this.getCharities());
       };
 
     render() {
@@ -37,12 +78,20 @@ class CharityPage extends Component {
                 {this.state.isLoading ? (
                     <Spinner />
                 ) : (
-                    <List>
+                    <Container>
+                    <Jumbotron>
                     <h1 className="text-center">
                   <strong>Charity Search</strong>
                 </h1>
                 <h2 className="text-center">Search for and Save Charities of Interest.</h2>
-                    
+                </Jumbotron>
+                <Form>
+                <Form.Control type="text" placeholder="Charity Name" handleInputChange={this.handleInputChange}/>
+                <Button
+                handleFormSubmit={this.handleFormSubmit}
+                q={this.state.q} />
+              </Form>
+              <List>
                       {this.state.charities.map(charity => (
                         <CharityList
                           key={charity._id}
@@ -56,13 +105,14 @@ class CharityPage extends Component {
                           missionStatement={charity.missionStatement}
                           Button={() => (
                             <button
-                              onClick={() => this.handleCharityDelete(charity._id)}
-                              className="btn btn-danger ml-2">Delete
+                              onClick={() => this.handleCharitySave(charity._id)}
+                              className="btn btn-primary ml-2">Save
                             </button>
                           )}
                         />
-                      ))};
-                    </List>
+                      ))}
+                </List>
+                </Container>
         )};
     </React.Fragment>
     )};
