@@ -220,7 +220,7 @@ class AuthPage extends Component {
             <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
-                src="carousel2.jpeg"
+                src="carousel2.jpg"
                 alt="Third slide"
                 id="img-2"
               />
@@ -233,7 +233,7 @@ class AuthPage extends Component {
             <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
-                src="carousel3.jpeg"
+                src="carousel3.jpg"
                 alt="Third slide"
                 id="img-3"
               />
