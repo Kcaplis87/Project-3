@@ -15,6 +15,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 
 
+
 class AuthPage extends Component {
   state = {
     isLogin: true
@@ -115,12 +116,15 @@ class AuthPage extends Component {
       <div id="maindiv">
 
         <Jumbotron fluid id="jumbo">
-
+        <div id="flex-container">
+        <div id="img">
+          <img alt="" src="logo_transparent.png" height="500px" width="500px"></img>
+        </div>
 
           <div>
 
 
-      
+
             <Form id="signin">
               <Form.Group controlId="formBasicEmail" onSubmit={this.submitHandler}>
                 <Form.Label>
@@ -144,55 +148,55 @@ class AuthPage extends Component {
               {/* <Form.Group controlId="formBasicChecbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group> */}
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" id="button">
                 Submit
   </Button>
-              <Button type="button" onClick={this.switchModeHandler}>
+              <Button type="button" onClick={this.switchModeHandler} id="button">
                 Switch to {this.state.isLogin ? 'Signup' : 'Login'}
               </Button>
 
             </Form>
           </div>
-
+          <div>
+            <h8>"Giving is not about <br></br>making a donation, <br></br>it is about making <br></br>a difference."</h8>
+          </div>
+          </div>
         </Jumbotron>
 
 
-        <CardGroup id="card">
+        <CardGroup id="card1">
           <Card>
             <Card.Img variant="top" id="img1" src="https://images.pexels.com/photos/1493374/pexels-photo-1493374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
             <Card.Body>
               <Card.Title>Volunteer</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
+                Spend your time making an impact on the lives of those around you
       </Card.Text>
+      <Button variant="primary" id="button">Save Your Spot</Button>
             </Card.Body>
-            <Card.Footer>
-              <small className="text-muted"></small>
-            </Card.Footer>
+
           </Card>
           <Card>
             <Card.Img variant="top" id="img2" src="https://cdn.pixabay.com/photo/2016/03/05/21/21/agree-1238964_1280.jpg" />
             <Card.Body>
               <Card.Title>Organize</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.{' '}
+                Put your best foot forward and step into a leadership role{' '}
               </Card.Text>
+              <Button variant="primary" id="button">Learn More</Button>
             </Card.Body>
-            <Card.Footer>
-              <small className="text-muted"></small>
-            </Card.Footer>
+
           </Card>
           <Card>
             <Card.Img variant="top" id="img3" src="https://cdn.pixabay.com/photo/2014/09/26/21/51/heart-462873_1280.jpg" />
             <Card.Body>
               <Card.Title>Donate</Card.Title>
               <Card.Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis lectus, facilisis id enim nec.
+                Whether it is time, money or positivity we appreciate your awareness
       </Card.Text>
+      <Button variant="primary" id="button">Start Here</Button>
             </Card.Body>
-            <Card.Footer>
-              <small className="text-muted"></small>
-            </Card.Footer>
+
           </Card>
         </CardGroup>
 
@@ -201,7 +205,7 @@ class AuthPage extends Component {
 
         <Container>
           <Carousel>
-            <Carousel.Item>
+            <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
                 src="https://images.pexels.com/photos/678637/pexels-photo-678637.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -213,7 +217,7 @@ class AuthPage extends Component {
                 {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
                 src="https://cdn.pixabay.com/photo/2017/07/29/00/09/child-2550326_1280.jpg"
@@ -226,7 +230,7 @@ class AuthPage extends Component {
                 {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item data-interval="500">
               <img
                 className="d-block w-100"
                 src="https://cdn.pixabay.com/photo/2017/02/03/17/41/poverty-2035694_1280.jpg"
@@ -241,32 +245,87 @@ class AuthPage extends Component {
             </Carousel.Item>
           </Carousel>
         </Container>
-
-        <CardGroup id="card">
+<Container id="last">
+        <CardGroup>
+       
           <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+            {/* <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+
               <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-    </Card.Text>
+                <div className="flex-container">
+                  <div id="info">
+                    <h1 id="info1">Stay Connected</h1>
+                    <ListGroup className="list-group-flush" id="info2">
+                      <ListGroupItem>-Sign-up to stay connected to our work and hear about how you can make a difference worldwide.-</ListGroupItem>
+                      <ListGroupItem>
+                        <Form.Group controlId="formBasicEmail" onSubmit={this.submitHandler}>
+                          <Form.Label>
+
+                          </Form.Label>
+                          <Form.Label>Email address: </Form.Label>
+                          <br></br>
+                          <input type="email" id="email" ref={this.emailEl} />
+                          {/* <Form.Control type="email" placeholder="Enter email" /> */}
+                          {/* <Form.Text className="text-muted">
+      We'll never share your email with anyone else.
+    </Form.Text> */}
+                        </Form.Group>
+                        <Button variant="primary" type="submit" id="button">
+                          Stay Connected
+  </Button>
+                      </ListGroupItem>
+
+                    </ListGroup>
+                  </div>
+                  <div id="info">
+                    <h1 id="info1">Get Involved</h1>
+                    <br></br>
+                    <h6>Donate</h6>
+                    <h6>Upcoming Events</h6>
+                    <h6>Corporate Partnership</h6>
+                    <h6>Volunteer Opportunities</h6>
+                    <h6>Join Our Support Team</h6>
+                    <h6>Internship Opportunities</h6>
+                    <h6>Sign up for our Newsletter</h6>
+                  </div>
+                  <div id="info">
+                    <h1 id="info1" class="about">About</h1>
+                    <br></br>
+                    <h6>Blog</h6>
+                    <h6>Our Mission</h6>
+                    <h6>The Impact</h6>
+                    <h6>Financials/Annual Report</h6>
+                    <h6>Program Impact</h6>
+                    <h6>Videos</h6>
+                  </div>
+                  <div id="info">
+                    <h1 id="info1" class="contact">Contact</h1>
+                    <br></br>
+                    <h6>Contact Us</h6>
+                    <h6>Become a Partner</h6>
+                    <h6>Locations</h6>
+                    <h6>111-111-1111</h6>
+                  </div>
+
+
+                </div>
+              </Card.Text>
             </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>Cras justo odio</ListGroupItem>
-              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
-            </ListGroup>
+
 
           </Card>
 
 
 
-
+     
         </CardGroup>
+        </Container>
+
         <Card>
 
           <Card.Body id="footer">
+          
             <Card.Title>Helping Hands 2019
     <br></br>
               UCF Coding Bootcamp

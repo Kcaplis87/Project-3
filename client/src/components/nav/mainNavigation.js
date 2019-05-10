@@ -9,11 +9,17 @@ const mainNavigation = props => (
     <AuthContext.Consumer>
         {(context) => {
             return (
+                
             <header className="main-navigation">
+            <h1>The Charity App that lends a hand</h1>
             <div className="main-naviation_logo">
-                <h1>Helping Hands Intl</h1>
+                
             </div>
+      
+           
+           
             <nav className="main-navigation_items">
+          
                 <ul>
                     {!context.token && (
                     <li>
