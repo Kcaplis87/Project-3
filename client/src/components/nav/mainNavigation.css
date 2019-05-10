@@ -39,7 +39,7 @@
 .main-navigation_items a,
 .main-navigation_items button {
   text-decoration: none;
-  color: black;
+  color: #47476b;
   padding: 0.25rem 0.5rem;
   border: none;
   font: inherit;
@@ -64,6 +64,13 @@ font-weight: bolder;
 
 h1{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-text-align: center;
+
 font-weight: bolder;
+font-size: 20px;
+color: #47476b;
+
+}
+
+#app{
+  align-items: center;
 }

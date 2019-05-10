@@ -10,7 +10,9 @@ margin: 300px;
 #maindiv{
     background-color: steelblue;
 }
-
+#flex-container{
+    display: flex;
+}
 
 #jumbo{
 
@@ -22,15 +24,32 @@ margin: 300px;
     height: 900px;
     margin-bottom: 0% !important;
     
-    
+  
  
+}
+
+#button{
+    background-color: coral;
+    color: black;
+    font-size: 13px;
 }
 
 #signin{
 text-align: center;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-text-align: center;
+color: #47476b;
 font-weight: bolder;
+position: relative;
+left: 50px;
+top: 50px;
+
+}
+
+#img{
+    position: relative;
+    bottom: 175px;
+    right: 50px;
+   
 }
 #img1{
     height: 300px;
@@ -59,23 +78,68 @@ font-weight: bolder;
 }
 
 .flex-container{
-    /* display: flex; */
+    display: flex;
+    
 
-   
-  
 } 
+#info{
+width: 350px;
 
-#card{
+
+}
+
+.about{
+    margin-right: 100px;
+}
+.contact{
+    margin-right: 80px;
+}
+
+h6{
+font-size: 12px;
+color: steelblue;
+margin-left: 80px;
+}
+#info2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+  font-size: 15px;
+  text-align: left;
+ 
+}
+
+#info1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+text-align: center;
+font-weight: bold;
+font-size: 30px;
+text-shadow: 2px 2px steelblue;
+
+}
+ 
+
+#card1{
     
 
 
-background: none !important;
+
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 text-align: center;
 font-weight: bolder;
 
 
 }
+
+#card{
+   
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+text-align: center;
+font-weight: bolder;
+
+
+}
+
+
 .main-content {
     margin: 0rem 0rem !important;
 }
@@ -98,6 +162,8 @@ h2{
 
 }
 
+
+
 h4{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
@@ -109,7 +175,9 @@ h4{
 
 #footer{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-text-align: right;
+text-align: center;
 font-weight: bolder;
+background-color: coral;
+color: white;
 }
 
