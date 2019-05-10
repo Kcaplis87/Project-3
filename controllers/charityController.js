@@ -1,18 +1,18 @@
 const axios = require("axios");
 const db = require("../../models/charity");
 
-// Defining methods for the charityResolver
+// Defining methods for the charityController
 
 // find searches the orghunter API and returns only the entries that haven't already been saved
 
-// It also makes sure that the books returned from the API all contain a title, author, link, description, and image
+// It also makes sure that the charities returned from the API all contain a charity name, url, donationurl, city, state, score, category and mission statement
 module.exports = {
   find: function(req, res) {
     const baseURL = "http://data.orghunter.com/v1/charitysearch?";
     const user_key = "user_key=6df46cdb01f8d1e0479ada556c86e59c";
     const { query: params } = req;
     axios
-      .get(baseURL + user_key + "&searchTerm=", {
+      .post(baseURL + user_key + "&searchTerm=", {
         params
       })
       .then(results =>

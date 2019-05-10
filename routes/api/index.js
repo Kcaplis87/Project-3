@@ -4,7 +4,7 @@ const savedCharityRoutes = require("./savedCharityRoutes");
 const charityRoutes = require("./charityRoutes");
 
 // Charity routes
-router.use("/savedcharities", savedCharityRoutes);
+router.use("/savedCharities", savedCharityRoutes);
 
 // Orghunter Routes
 router.use("/charity", charityRoutes);
