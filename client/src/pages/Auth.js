@@ -116,50 +116,50 @@ class AuthPage extends Component {
       <div id="maindiv">
 
         <Jumbotron fluid id="jumbo">
-        <div id="flex-container">
-        <div id="img">
-          <img alt="" src="logo_transparent.png" height="500px" width="500px"></img>
-        </div>
+          <div id="flex-container">
+            <div id="img">
+              <img alt="" src="logo_transparent.png" height="500px" width="500px"></img>
+            </div>
 
-          <div>
+            <div>
 
 
 
-            <Form id="signin">
-              <Form.Group controlId="formBasicEmail" onSubmit={this.submitHandler}>
-                <Form.Label>
+              <Form id="signin">
+                <Form.Group controlId="formBasicEmail" onSubmit={this.submitHandler}>
+                  <Form.Label>
 
-                </Form.Label>
-                <Form.Label>Email address: </Form.Label>
-                <br></br>
-                <input type="email" id="email" ref={this.emailEl} />
-                {/* <Form.Control type="email" placeholder="Enter email" /> */}
-                {/* <Form.Text className="text-muted">
+                  </Form.Label>
+                  <Form.Label>Email address: </Form.Label>
+                  <br></br>
+                  <input type="email" id="email" ref={this.emailEl} />
+                  {/* <Form.Control type="email" placeholder="Enter email" /> */}
+                  {/* <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text> */}
-              </Form.Group>
+                </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password: </Form.Label>
-                <br></br>
-                <input type="password" id="password" ref={this.passwordEl} />
-                {/* <Form.Control type="password" placeholder="Password" /> */}
-              </Form.Group>
-              {/* <Form.Group controlId="formBasicChecbox">
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Label>Password: </Form.Label>
+                  <br></br>
+                  <input type="password" id="password" ref={this.passwordEl} />
+                  {/* <Form.Control type="password" placeholder="Password" /> */}
+                </Form.Group>
+                {/* <Form.Group controlId="formBasicChecbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group> */}
-              <Button variant="primary" type="submit" id="button">
-                Submit
+                <Button variant="primary" type="submit" id="button">
+                  Submit
   </Button>
-              <Button type="button" onClick={this.switchModeHandler} id="button">
-                Switch to {this.state.isLogin ? 'Signup' : 'Login'}
-              </Button>
+                <Button type="button" onClick={this.switchModeHandler} id="button">
+                  Switch to {this.state.isLogin ? 'Signup' : 'Login'}
+                </Button>
 
-            </Form>
-          </div>
-          <div>
-            <h8>"Giving is not about <br></br>making a donation, <br></br>it is about making <br></br>a difference."</h8>
-          </div>
+              </Form>
+            </div>
+            <div>
+              <h8>"Giving is not about <br></br>making a donation, <br></br>it is about making <br></br>a difference."</h8>
+            </div>
           </div>
         </Jumbotron>
 
@@ -172,7 +172,7 @@ class AuthPage extends Component {
               <Card.Text>
                 Spend your time making an impact on the lives of those around you
       </Card.Text>
-      <Button variant="primary" id="button">Save Your Spot</Button>
+              <Button variant="primary" id="button">Save Your Spot</Button>
             </Card.Body>
 
           </Card>
@@ -194,7 +194,7 @@ class AuthPage extends Component {
               <Card.Text>
                 Whether it is time, money or positivity we appreciate your awareness
       </Card.Text>
-      <Button variant="primary" id="button">Start Here</Button>
+              <Button variant="primary" id="button">Start Here</Button>
             </Card.Body>
 
           </Card>
@@ -245,87 +245,87 @@ class AuthPage extends Component {
             </Carousel.Item>
           </Carousel>
         </Container>
-<Container id="last">
-        <CardGroup>
-       
-          <Card style={{ width: '18rem' }}>
-            {/* <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
-            <Card.Body>
+        <Container id="last">
+          <CardGroup>
 
-              <Card.Text>
-                <div className="flex-container">
-                  <div id="info">
-                    <h1 id="info1">Stay Connected</h1>
-                    <ListGroup className="list-group-flush" id="info2">
-                      <ListGroupItem>-Sign-up to stay connected to our work and hear about how you can make a difference worldwide.-</ListGroupItem>
-                      <ListGroupItem>
-                        <Form.Group controlId="formBasicEmail" onSubmit={this.submitHandler}>
-                          <Form.Label>
+            <Card style={{ width: '18rem' }}>
+              {/* <Card.Img variant="top" src="holder.js/100px180?text=Image cap" /> */}
+              <Card.Body>
 
-                          </Form.Label>
-                          <Form.Label>Email address: </Form.Label>
-                          <br></br>
-                          <input type="email" id="email" ref={this.emailEl} />
-                          {/* <Form.Control type="email" placeholder="Enter email" /> */}
-                          {/* <Form.Text className="text-muted">
+                <Card.Text>
+                  <div className="flex-container">
+                    <div id="info">
+                      <h1 id="info1">Stay Connected</h1>
+                      <ListGroup className="list-group-flush" id="info2">
+                        <ListGroupItem>-Sign-up to stay connected to our work and hear about how you can make a difference worldwide.-</ListGroupItem>
+                        <ListGroupItem>
+                          <Form.Group controlId="formBasicEmail" onSubmit={this.submitHandler}>
+                            <Form.Label>
+
+                            </Form.Label>
+                            <Form.Label>Email address: </Form.Label>
+                            <br></br>
+                            <input type="email" id="email" ref={this.emailEl} />
+                            {/* <Form.Control type="email" placeholder="Enter email" /> */}
+                            {/* <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text> */}
-                        </Form.Group>
-                        <Button variant="primary" type="submit" id="button">
-                          Stay Connected
+                          </Form.Group>
+                          <Button variant="primary" type="submit" id="button">
+                            Stay Connected
   </Button>
-                      </ListGroupItem>
+                        </ListGroupItem>
 
-                    </ListGroup>
+                      </ListGroup>
+                    </div>
+                    <div id="info">
+                      <h1 id="info1">Get Involved</h1>
+                      <br></br>
+                      <h6>Donate</h6>
+                      <h6>Upcoming Events</h6>
+                      <h6>Corporate Partnership</h6>
+                      <h6>Volunteer Opportunities</h6>
+                      <h6>Join Our Support Team</h6>
+                      <h6>Internship Opportunities</h6>
+                      <h6>Sign up for our Newsletter</h6>
+                    </div>
+                    <div id="info">
+                      <h1 id="info1" class="about">About</h1>
+                      <br></br>
+                      <h6>Blog</h6>
+                      <h6>Our Mission</h6>
+                      <h6>The Impact</h6>
+                      <h6>Financials/Annual Report</h6>
+                      <h6>Program Impact</h6>
+                      <h6>Videos</h6>
+                    </div>
+                    <div id="info">
+                      <h1 id="info1" class="contact">Contact</h1>
+                      <br></br>
+                      <h6>Contact Us</h6>
+                      <h6>Become a Partner</h6>
+                      <h6>Locations</h6>
+                      <h6>111-111-1111</h6>
+                    </div>
+
+
                   </div>
-                  <div id="info">
-                    <h1 id="info1">Get Involved</h1>
-                    <br></br>
-                    <h6>Donate</h6>
-                    <h6>Upcoming Events</h6>
-                    <h6>Corporate Partnership</h6>
-                    <h6>Volunteer Opportunities</h6>
-                    <h6>Join Our Support Team</h6>
-                    <h6>Internship Opportunities</h6>
-                    <h6>Sign up for our Newsletter</h6>
-                  </div>
-                  <div id="info">
-                    <h1 id="info1" class="about">About</h1>
-                    <br></br>
-                    <h6>Blog</h6>
-                    <h6>Our Mission</h6>
-                    <h6>The Impact</h6>
-                    <h6>Financials/Annual Report</h6>
-                    <h6>Program Impact</h6>
-                    <h6>Videos</h6>
-                  </div>
-                  <div id="info">
-                    <h1 id="info1" class="contact">Contact</h1>
-                    <br></br>
-                    <h6>Contact Us</h6>
-                    <h6>Become a Partner</h6>
-                    <h6>Locations</h6>
-                    <h6>111-111-1111</h6>
-                  </div>
+                </Card.Text>
+              </Card.Body>
 
 
-                </div>
-              </Card.Text>
-            </Card.Body>
-
-
-          </Card>
+            </Card>
 
 
 
-     
-        </CardGroup>
+
+          </CardGroup>
         </Container>
 
         <Card>
 
           <Card.Body id="footer">
-          
+
             <Card.Title>Helping Hands 2019
     <br></br>
               UCF Coding Bootcamp
