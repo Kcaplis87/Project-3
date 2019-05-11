@@ -40,34 +40,35 @@ class App extends Component {
               logout: this.logout
             }}
           >
-            <MainNavigation />
+            <MainNavigation/>
 
- 
-            <main className="main-content">
-              <Switch>
-                {this.state.token && <Redirect from="/" to="/events" exact />}
-                {this.state.token && (
-                  <Redirect from="/auth" to="/events" exact />
-                )}
-                {!this.state.token && (
-                  <Route path="/auth" component={AuthPage} />
-                )}
-                <Route path="/events" component={EventsPage} />
-                {this.state.token && (
-                  <Route path="/bookings" component={BookingsPage} />
-                )}
-                {this.state.token && (
-                  <Route path="/charity" component={CharityPage} />
-                )}
-                {!this.state.token && <Redirect to="/auth" exact />}
-              </Switch>
-            </main>
-      
+
+              <main className="main-content">
+                <Switch>
+                  {!this.state.token && <Redirect from="/" to="/auth" exact />}
+                  {!this.state.token && (
+                    <Route path="/auth" component={AuthPage} />
+                  )}
+                  {!this.state.token && <Redirect from="/" to="/events" exact />}
+                  {this.state.token && (
+                    <Route path="/events" component={EventsPage} />
+                  )}
+                  {!this.state.token && <Redirect from="/" to="/bookings" exact />}
+                  {this.state.token && (
+                    <Route path="/bookings" component={BookingsPage} />
+                  )}
+                  {!this.state.token && <Redirect from="/" to="/charity" exact />}
+                  {!this.state.token && (
+                    <Route path="/charities" component={CharityPage} />
+                  )}
+                </Switch>
+              </main>
+            
           </AuthContext.Provider>
         </React.Fragment>
       </BrowserRouter>
-      
-   
+
+
     );
   }
 }

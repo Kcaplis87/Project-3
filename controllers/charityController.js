@@ -7,13 +7,13 @@ const db = require("../../models/charity");
 
 // It also makes sure that the charities returned from the API all contain a charity name, url, donationurl, city, state, score, category and mission statement
 module.exports = {
-  find: function(req, res) {
+  findAll: function(req, res) {
     const baseURL = "http://data.orghunter.com/v1/charitysearch?";
     const user_key = "user_key=6df46cdb01f8d1e0479ada556c86e59c";
-    const { query: params } = req;
+    const { searchTerm: params } = req;
     axios
-      .post(baseURL + user_key + "&searchTerm=", {
-        params
+      .get(baseURL + user_key, {
+      
       })
       .then(results =>
         results.data.filter(

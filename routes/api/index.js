@@ -1,7 +1,7 @@
 const path = require("path");
 const router = require("express").Router();
-const savedCharityRoutes = require("./savedCharityRoutes");
-const charityRoutes = require("./charityRoutes");
+const savedCharityRoutes = require("./savedCharities");
+const charityRoutes = require("./charity");
 
 // Charity routes
 router.use("/savedCharities", savedCharityRoutes);

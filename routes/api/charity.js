@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const charityController = require("../controllers/charityController");
 
-// Matches with "/api/orghunter"
+// Matches with "/api/charity"
 router
   .route("/")
-  .get(charityController.find);
+  .get(charityController.findAll);
 
 module.exports = router;
